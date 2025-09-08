@@ -12,7 +12,7 @@ int getRandomNumber(int start, int end) {
 void levelUp(int hero[]) {
     hero[2]++; 
     hero[3] += 5; 
-    cout << "ÏÎÂÛØÅÍÈÅ ÓÐÎÂÍß! Óðîâåíü: " << hero[2] << ", Ñèëà àòàêè: " << hero[3] << endl;
+    cout << "ÃÃŽÃ‚Ã›Ã˜Ã…ÃÃˆÃ… Ã“ÃÃŽÃ‚ÃÃŸ! Ã“Ã°Ã®Ã¢Ã¥Ã­Ã¼: " << hero[2] << ", Ã‘Ã¨Ã«Ã  Ã Ã²Ã ÃªÃ¨: " << hero[3] << endl;
 }
 
 void attack(int hero[], int& monsterHP) {
@@ -20,11 +20,11 @@ void attack(int hero[], int& monsterHP) {
     if (damage < 0) damage = 0;
     
     monsterHP -= damage;
-    cout << "Ãåðîé àòàêóåò ìîíñòðà è íàíîñèò " << damage << " óðîíà!" << endl;
+    cout << "ÃƒÃ¥Ã°Ã®Ã© Ã Ã²Ã ÃªÃ³Ã¥Ã² Ã¬Ã®Ã­Ã±Ã²Ã°Ã  Ã¨ Ã­Ã Ã­Ã®Ã±Ã¨Ã² " << damage << " Ã³Ã°Ã®Ã­Ã !" << endl;
     
     if (monsterHP <= 0) {
         monsterHP = 0;
-        cout << "Ìîíñòð ïîâåðæåí! Ãåðîé ïîëó÷àåò +20 XP." << endl;
+        cout << "ÃŒÃ®Ã­Ã±Ã²Ã° Ã¯Ã®Ã¢Ã¥Ã°Ã¦Ã¥Ã­! ÃƒÃ¥Ã°Ã®Ã© Ã¯Ã®Ã«Ã³Ã·Ã Ã¥Ã² +20 XP." << endl;
         hero[1] += 20;
         
         if (hero[1] >= 50 * hero[2]) {
@@ -41,7 +41,7 @@ void heal(int hero[]) {
         hero[0] = 100 + (hero[2] - 1) * 20;
     }
     
-    cout << "Ãåðîé ëå÷èòñÿ è âîññòàíàâëèâàåò " << healing << " HP." << endl;
+    cout << "ÃƒÃ¥Ã°Ã®Ã© Ã«Ã¥Ã·Ã¨Ã²Ã±Ã¿ Ã¨ Ã¢Ã®Ã±Ã±Ã²Ã Ã­Ã Ã¢Ã«Ã¨Ã¢Ã Ã¥Ã² " << healing << " HP." << endl;
 }
 
 void monsterAttack(int hero[], int monsterAttack) {
@@ -49,7 +49,7 @@ void monsterAttack(int hero[], int monsterAttack) {
     if (damage < 0) damage = 0;
     
     hero[0] -= damage;
-    cout << "Ìîíñòð àòàêóåò è íàíîñèò " << damage << " óðîíà!" << endl;
+    cout << "ÃŒÃ®Ã­Ã±Ã²Ã° Ã Ã²Ã ÃªÃ³Ã¥Ã² Ã¨ Ã­Ã Ã­Ã®Ã±Ã¨Ã² " << damage << " Ã³Ã°Ã®Ã­Ã !" << endl;
 }
 
 bool tryToRun() {
@@ -62,20 +62,20 @@ int main() {
     
     int hero[4] = {100, 0, 1, 20};
     
-    cout << "Äîáðî ïîæàëîâàòü â ìèíè-RPG!" << endl;
-    cout << "Ãåðîþ ïðåäñòîèò ñðàçèòüñÿ ñ òðåìÿ ìîíñòðàìè!" << endl << endl;
+    cout << "Ã„Ã®Ã¡Ã°Ã® Ã¯Ã®Ã¦Ã Ã«Ã®Ã¢Ã Ã²Ã¼ Ã¢ Ã¬Ã¨Ã­Ã¨-RPG!" << endl;
+    cout << "ÃƒÃ¥Ã°Ã®Ã¾ Ã¯Ã°Ã¥Ã¤Ã±Ã²Ã®Ã¨Ã² Ã±Ã°Ã Ã§Ã¨Ã²Ã¼Ã±Ã¿ Ã± Ã²Ã°Ã¥Ã¬Ã¿ Ã¬Ã®Ã­Ã±Ã²Ã°Ã Ã¬Ã¨!" << endl << endl;
     
     for (int round = 1; round <= 3; round++) {
         int monsterHP = 15 + round * 10;
         int monsterAttackPower = 5 + round * 3;
         
-        cout << "Ðàóíä " << round << ": ïîÿâëÿåòñÿ ìîíñòð! HP: " << monsterHP 
-             << ", Óðîí: " << monsterAttackPower << endl;
+        cout << "ÃÃ Ã³Ã­Ã¤ " << round << ": Ã¯Ã®Ã¿Ã¢Ã«Ã¿Ã¥Ã²Ã±Ã¿ Ã¬Ã®Ã­Ã±Ã²Ã°! HP: " << monsterHP 
+             << ", Ã“Ã°Ã®Ã­: " << monsterAttackPower << endl;
         
         while (hero[0] > 0 && monsterHP > 0) {
-            cout << "Ãåðîé: HP=" << hero[0] << ", XP=" << hero[1] << ", LVL=" << hero[2] << endl;
-            cout << "Äåéñòâèÿ: 1 - àòàêîâàòü, 2 - ëå÷èòüñÿ, 3 - áåæàòü" << endl;
-            cout << "Âûáåðèòå äåéñòâèå: ";
+            cout << "ÃƒÃ¥Ã°Ã®Ã©: HP=" << hero[0] << ", XP=" << hero[1] << ", LVL=" << hero[2] << endl;
+            cout << "Ã„Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã¿: 1 - Ã Ã²Ã ÃªÃ®Ã¢Ã Ã²Ã¼, 2 - Ã«Ã¥Ã·Ã¨Ã²Ã¼Ã±Ã¿, 3 - Ã¡Ã¥Ã¦Ã Ã²Ã¼" << endl;
+            cout << "Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã¤Ã¥Ã©Ã±Ã²Ã¢Ã¨Ã¥: ";
             
             int choice;
             cin >> choice;
@@ -91,15 +91,15 @@ int main() {
                     
                 case 3:
                     if (tryToRun()) {
-                        cout << "Ãåðîé óáåãàåò îò ìîíñòðà!" << endl;
+                        cout << "ÃƒÃ¥Ã°Ã®Ã© Ã³Ã¡Ã¥Ã£Ã Ã¥Ã² Ã®Ã² Ã¬Ã®Ã­Ã±Ã²Ã°Ã !" << endl;
                         monsterHP = 0;
                     } else {
-                        cout << "Ïîáåã íå óäàëñÿ! Ìîíñòð áëîêèðóåò ïóòü!" << endl;
+                        cout << "ÃÃ®Ã¡Ã¥Ã£ Ã­Ã¥ Ã³Ã¤Ã Ã«Ã±Ã¿! ÃŒÃ®Ã­Ã±Ã²Ã° Ã¡Ã«Ã®ÃªÃ¨Ã°Ã³Ã¥Ã² Ã¯Ã³Ã²Ã¼!" << endl;
                     }
                     break;
                     
                 default:
-                    cout << "Íåâåðíûé âûáîð! Ãåðîé òåðÿåò õîä." << endl;
+                    cout << "ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã¢Ã»Ã¡Ã®Ã°! ÃƒÃ¥Ã°Ã®Ã© Ã²Ã¥Ã°Ã¿Ã¥Ã² ÃµÃ®Ã¤." << endl;
                     break;
             }
             
@@ -108,18 +108,20 @@ int main() {
             }
             
             if (hero[0] <= 0) {
-                cout << "Ãåðîé ïîãèá! ÈÃÐÀ ÎÊÎÍ×ÅÍÀ." << endl;
+                cout << "ÃƒÃ¥Ã°Ã®Ã© Ã¯Ã®Ã£Ã¨Ã¡! ÃˆÃƒÃÃ€ ÃŽÃŠÃŽÃÃ—Ã…ÃÃ€." << endl;
                 return 0;
             }
             
             cout << endl;
         }
         
-        cout << "Ðàóíä " << round << " ïðîéäåí! Ãåðîé ïðîäîëæàåò ïóòü." << endl << endl;
+        cout << "ÃÃ Ã³Ã­Ã¤ " << round << " Ã¯Ã°Ã®Ã©Ã¤Ã¥Ã­! ÃƒÃ¥Ã°Ã®Ã© Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã Ã¥Ã² Ã¯Ã³Ã²Ã¼." << endl << endl;
     }
+
     
-    cout << "Êîíåö ïðèêëþ÷åíèÿ! Ãåðîé äîñòèã óðîâíÿ " << hero[2] 
-         << " ñ " << hero[1] << " XP è " << hero[0] << " HP." << endl;
+    
+    cout << "ÃŠÃ®Ã­Ã¥Ã¶ Ã¯Ã°Ã¨ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¿! ÃƒÃ¥Ã°Ã®Ã© Ã¤Ã®Ã±Ã²Ã¨Ã£ Ã³Ã°Ã®Ã¢Ã­Ã¿ " << hero[2] 
+         << " Ã± " << hero[1] << " XP Ã¨ " << hero[0] << " HP." << endl;
     
     return 0;
 }
